@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/imgSrc/UI/textureProgressColors/underProgress.png" type="Texture" id=1]
+[ext_resource path="res://src/imgSrc/UI/textureProgressColors/morale.png" type="Texture" id=2]
+[ext_resource path="res://src/imgSrc/UI/textureProgressColors/health.png" type="Texture" id=3]
+[ext_resource path="res://src/imgSrc/UI/textureProgressColors/ammo.png" type="Texture" id=4]
+[ext_resource path="res://src/imgSrc/UI/textureProgressColors/graytexture.png" type="Texture" id=5]
+[ext_resource path="res://src/imgSrc/themes/fonts/unitInfo.tres" type="DynamicFont" id=6]
+
+[node name="unitInfo" type="MarginContainer"]
+margin_right = 100.0
+margin_bottom = 37.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 100.0
+margin_bottom = 37.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 231, 70, 0, 0 )
+
+[node name="Health" type="Label" parent="NinePatchRect"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 43.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 6 )
+text = "Health"
+
+[node name="healthProgress" type="TextureProgress" parent="NinePatchRect/Health"]
+margin_left = 47.0
+margin_top = 4.0
+margin_right = 147.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.5, 1 )
+value = 87.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 3 )
+
+[node name="Ammo" type="Label" parent="NinePatchRect"]
+margin_left = 1.0
+margin_top = 13.0
+margin_right = 43.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 6 )
+text = "Ammo"
+
+[node name="ammoProgress" type="TextureProgress" parent="NinePatchRect/Ammo"]
+margin_left = 47.0
+margin_top = 4.0
+margin_right = 147.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.5, 1 )
+value = 10.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 4 )
+
+[node name="Morale" type="Label" parent="NinePatchRect"]
+margin_left = 1.0
+margin_top = 25.0
+margin_right = 43.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 6 )
+text = "Morale"
+
+[node name="moraleProgress" type="TextureProgress" parent="NinePatchRect/Morale"]
+margin_left = 47.0
+margin_top = 4.0
+margin_right = 147.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.5, 1 )
+value = 11.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
